@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// Esto lo crea Voyager, sus Rutas 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
