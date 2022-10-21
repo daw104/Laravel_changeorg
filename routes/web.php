@@ -13,11 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [App\Http\Controllers\PagesController::class, 'home']);
 
 // Esto lo crea Voyager, sus Rutas 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+
+
