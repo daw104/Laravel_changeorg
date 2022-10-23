@@ -17,7 +17,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+// Ruta para home
 Route::get('/', [App\Http\Controllers\PagesController::class, 'home']);
+//Ruta para socios
+
+
 
 // Esto lo crea Voyager, sus Rutas 
 Route::group(['prefix' => 'admin'], function () {

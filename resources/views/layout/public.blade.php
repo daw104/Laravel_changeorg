@@ -24,29 +24,28 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link mayucula active" aria-current="page" href="pages/formularioPeticiones.html">Home</a>
+            <a class="nav-link mayucula active" aria-current="page" href="">Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link mayucula" aria-current="page" href="pages/formularioPeticiones.html">Inicia una pentición</a>
+            <a class="nav-link mayucula" aria-current="page" href="pages/crearPeticion.html">Inicia una pentición</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mayucula" href="pages/iniciarSesion.html">Programa de socios/as</a>
+            <a class="nav-link mayucula" href="#">Programa de socios/as</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mayucula active" href="pages/listasPeticiones.html">Más Peticiones</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-          <button class="btn btn-dark" type="submit">
-            Buscar
+        <div class="d-flex">
+          <button type="button" class="btn btn-success">
+            <a class="text-decoration-none" href="pages/iniciarSesion.html">Iniciar Sesión</a>
           </button>
-        </form>
+      </div>
+
       </div>
     </div>
   </nav>
-
 
 
 

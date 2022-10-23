@@ -12,12 +12,26 @@ img{
 }
 
 
+a{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+
+/* **ALINEAR IMAGENES DE DETALLE DE PETICIONES */
+.center-image-peticion{
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+
+
+
 /* SLIDER HOME */
 .carousel-item{
     height: 100vh;
     min-height: 300px;
 }
-
 
 .carousel-caption{
     bottom: 220px;
