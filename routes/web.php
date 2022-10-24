@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 // Ruta para home
 Route::get('/', [App\Http\Controllers\PagesController::class, 'home']);
 //Ruta para socios
+Route::get('/socios', [App\Http\Controllers\PagesController::class, 'socios']);
+//Ruta para peticiones
+Route::get('/peticiones/',
+[\App\Http\Controllers\VoyagerPeticionesController::class, 'index']);
 
 
 
