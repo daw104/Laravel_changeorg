@@ -23,9 +23,18 @@ Route::get('/', [App\Http\Controllers\PagesController::class, 'home']);
 Route::get('/socios', [App\Http\Controllers\PagesController::class, 'socios']);
 //Ruta para peticiones
 Route::get('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'index']);
+//Ruta para CREAR peticiones
+Route::get('/crear/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'create']);
+
+
+//Ruta para peticiones por USARIO
+Route::get('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'peticionesUser']);
+
 //Ruta Detalle de Peticion
 Route::get('/peticiones/{peticion}',[\App\Http\Controllers\VoyagerPeticionesController::class, 'show']);
 
+//Ruta para Firmar una Peticion
+Route::get('/peticiones/firmar/{peticion_id}',[\App\Http\Controllers\VoyagerPeticionesController::class, 'firmar']);
 
 
 // Esto lo crea Voyager, sus Rutas

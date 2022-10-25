@@ -39,25 +39,12 @@
                 <form>
                     <h3 class="text-center">Firma esta Petición</h3>
 
-                    <div class="form-outline mb-4">
-                        <input type="text" id="form2Example11" class="form-control"
-                               placeholder="Nombre" />
-                    </div>
 
-                    <div class="form-outline mb-4">
-                        <input type="text" id="form2Example11" class="form-control"
-                               placeholder="Apellidos" />
-                    </div>
-
-                    <div class="form-outline mb-4">
-                        <input type="email" id="form2Example11" class="form-control"
-                               placeholder="Email" />
-                    </div>
 
                     <div class="text-center pt-1 mb-5 pb-1">
 
                         <button class="btn btn-danger btn-block fa-lg mb-3" type="button">
-                            <a  href="#!">Firmar</a>
+                            <a  href="{{ url('peticiones/firmar/'.$peticion->id) }}">Firmar</a>
                         </button>
                     </div>
 

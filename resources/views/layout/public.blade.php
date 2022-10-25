@@ -33,7 +33,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link mayucula" aria-current="page" href="pages/crearPeticion.html">Inicia una pentición</a>
+            <a class="nav-link mayucula" aria-current="page" href="{{url('crear')}}">Inicia una pentición</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mayucula" href="{{url('socios')}}">Programa de socios/as</a>

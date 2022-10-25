@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Peticione extends Model
 {
     use HasFactory;
+
+    public function firmas(){
+        return $this->belongsToMany(User::class,'peticione_user');
+    }
+
 }
