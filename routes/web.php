@@ -22,12 +22,13 @@ Route::get('/', [App\Http\Controllers\PagesController::class, 'home']);
 //Ruta para socios
 Route::get('/socios', [App\Http\Controllers\PagesController::class, 'socios']);
 //Ruta para peticiones
-Route::get('/peticiones/',
-[\App\Http\Controllers\VoyagerPeticionesController::class, 'index']);
+Route::get('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'index']);
+//Ruta Detalle de Peticion
+Route::get('/peticiones/{peticion}',[\App\Http\Controllers\VoyagerPeticionesController::class, 'show']);
 
 
 
-// Esto lo crea Voyager, sus Rutas 
+// Esto lo crea Voyager, sus Rutas
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

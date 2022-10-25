@@ -1,12 +1,12 @@
-@extends('layout.public');
+@extends('layout.public')
 
 @section('content')
 
 
     <!--Section: ListarPeticiones-->
-    
 
-    
+
+
 
     <section class="text-center">
         <h4 class="mb-5 mt-4">
@@ -18,23 +18,25 @@
           <div class="col-lg-4 col-md-12 mb-4">
             <div class="card">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                
+
                     <img src="{{asset('storage/'.$peticion->image)}}" class="img-fluid"/>
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                    
-                    
+
+
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">
                         {{$peticion->titulo}}
                     </h5>
                     <p class="card-text">
-                    {{$peticion->descripcion}}
+                    {{ Illuminate\Support\Str::of($peticion->descripcion)->words(40) }}
                     </p>
-                    <a href="detallePeticion.html" class="btn btn-info">Leer mas</a>
+
+                    <a href="{{ url('peticiones/'.$peticion->id) }}" class="btn btn-info">Leer mas</a>
+
                 </div>
             </div>
-        </div> 
+        </div>
         @endforeach
     </div>
       </section>
@@ -56,7 +58,7 @@
           <li class="page-item">
             <a class="page-link" href="#" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
+              <span class="sr-only text-info">Next</span>
             </a>
           </li>
         </ul>

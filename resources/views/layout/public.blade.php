@@ -4,22 +4,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HOME</title>
+  <title>changeorg</title>
 
-  
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="">
-    
+
+   <!-- <link rel="stylesheet" href="css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.min.css')}}">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/custom.css" />
+   <!-- <link rel="stylesheet" href="css/custom.css" />-->
+    <link rel="stylesheet" type="text/css" href="{{url('css/custom.css')}}" />
   </head>
 
 <body>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg color_navbar">
     <div class="container-fluid">
-      <img width="130px" height="70px" src="./imgs/logo.png" style="position: relative; top: -10px" />
+      <img width="130px" height="70px" src="{{ asset('imgs/logo.png') }}" style="position: relative; top: -10px" />
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -165,7 +166,9 @@
     <!-- Copyright -->
   </footer>
 
-  <script src="js/bootstrap.min.js"></script>
+ <!-- <script src="js/bootstrap.min.js"></script> -->
+
+  <script src="{{url('js/bootstrap.min.js')}}"></script>
 
 </body>
 
