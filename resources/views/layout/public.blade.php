@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>changeorg</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
    <!-- <link rel="stylesheet" href="css/bootstrap.min.css">-->
     <link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.min.css')}}">
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <!-- <link rel="stylesheet" href="css/custom.css" />-->
     <link rel="stylesheet" type="text/css" href="{{url('css/custom.css')}}" />
@@ -169,7 +168,7 @@
  <!-- <script src="js/bootstrap.min.js"></script> -->
 
   <script src="{{url('js/bootstrap.min.js')}}"></script>
-
+  <script src="{{url('js/myfunctions.js')}}"></script>
 </body>
 
 </html>

@@ -36,19 +36,13 @@
             </div>
 
             <div class="col-12 col-md-5 col-sm-6">
-                <form>
+                <form id="formulario-peticion">
                     <h3 class="text-center">Firma esta Petición</h3>
-
-
-
-                    <div class="text-center pt-1 mb-5 pb-1">
-
+                    <div class="text-center pt-1 mb-5 pb-1" id="boton-firmar">
                         <button class="btn btn-danger btn-block fa-lg mb-3" type="button">
                             <a  href="{{ url('peticiones/firmar/'.$peticion->id) }}">Firmar</a>
                         </button>
                     </div>
-
-
                 </form>
             </div>
         </div>
