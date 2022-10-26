@@ -16,45 +16,44 @@
                                         <h4 class="mt-1 mb-5 pb-1">Somos ChangeOrg - Estas a punto de rellenar una Petición</h4>
                                     </div>
 
-                                    <form>
-
+                                    <form method="POST" enctype="multipart/form-data" action="{{url('peticiones')}}">
+                                        @csrf
                                         <div class="form-outline mb-4">
-                                            <input type="text" id="form2Example11" class="form-control" placeholder="Titulo*" required />
+                                            <input type="text" id="form2Example11" class="form-control" name="titulo" placeholder="Titulo*" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
 
-                                            <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" placeholder="Descripcion*" required></textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" name="descripcion" placeholder="Descripcion*" required></textarea>
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <input type="text" id="form2Example22" class="form-control" min="0" placeholder="Destinatario*" required/>
+                                            <input type="text" id="form2Example22" class="form-control"  name="destinatario"  placeholder="Destinatario*" required/>
 
                                         </div>
 
 
                                         <div class="form-outline mb-4">
+
                                             <label for="exampleFormControlSelect1" class="form-label" required>Selecciona una Categoria Para tu Petición*</label>
 
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>Categorias Ejemplos</option>
-                                                <option>Categorias Ejemplos</option>
-                                                <option>Categorias Ejemplos</option>
-                                                <option>Categorias Ejemplos</option>
+                                            <select name="category" class="form-control" id="exampleFormControlSelect1">
+                                                @foreach($categorias as $categoria)
+                                                <option  value="{{$categoria->id}}">{{$categoria->name}}</option>
+                                                @endforeach
 
                                             </select>
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label for="exampleFormControlSelect1" class="form-label" required>Selecciona una imagen para tu Petición*</label>
-                                            <input type="file" id="form2Example22" class="form-control" />
+                                            <input type="file" id="form2Example22" class="form-control" name="image" />
                                         </div>
 
                                         <div class="container alineacion__botonCentro">
                                             <div class="row">
-                                                <div class="col-12 pt-3">
-                                                    <button type="submit" class="btn btn-outline-danger">Enviar</button>
-                                                </div>
+                                                    <button  type="submit" class="btn btn-danger col-12 pt-3" type="button">Enviar
+                                                    </button>
                                             </div>
                                         </div>
                                 </div>

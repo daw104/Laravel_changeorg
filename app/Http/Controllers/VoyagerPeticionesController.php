@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 //tenemos que importarlo
@@ -55,9 +56,38 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
 
 
 
+    //Para ver el formulario de crear una peticion
     public function create(Request $request){
-        return view('peticiones.create');
+        $categorias = Category::all();
+        return view('peticiones.create', compact('categorias'));
+    }
 
+
+
+    //Guardar una peticion
+    public function store(Request $request){
+
+        $this->validate($request, [
+            'titulo' => 'required|max:255',
+            'descripcion' => 'required',
+            'destinatario' => 'required',
+            'image' => 'required',
+        ]);
+        $input = $request->all();
+        if ($file = $request->file('file')) {
+            $name = $file->getClientOriginalName();
+            $file->move('images', $name);
+            $input['image'] = $name;
+        }
+        $category = Category::findOrFail($input['category']);
+        $user = 2; //asociarlo al usuario authenticado
+        $peticion = new Peticione($input);
+        $peticion->user()->associate($user);
+        $peticion->category()->associate($category);
+        $peticion->firmantes = 0;
+        $peticion->estado = 'pendiente';
+        $peticion->save();
+        return redirect('/peticiones');
     }
 
 

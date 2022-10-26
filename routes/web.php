@@ -26,6 +26,8 @@ Route::get('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::cl
 //Ruta para CREAR peticiones
 Route::get('/crear/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'create']);
 
+//Ruta para CREAR peticiones
+Route::post('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'store']);
 
 //Ruta para peticiones por USARIO
 Route::get('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'peticionesUser']);
