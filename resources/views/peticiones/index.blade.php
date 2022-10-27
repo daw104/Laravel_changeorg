@@ -28,6 +28,10 @@
                     <h5 class="card-title">
                         {{$peticion->titulo}}
                     </h5>
+                    <h5 class="card-title">
+                  <strong>  Esta petción esta: {{$peticion->estado}} </strong>
+                    </h5>
+
                     <p class="card-text">
                     {{ Illuminate\Support\Str::of($peticion->descripcion)->words(40) }}
                     </p>
@@ -44,27 +48,6 @@
       </section>
 
 
-      <!--ListarPeticiones: Content-->
-
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only text-info">Previous</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link text-info" href="#">1</a></li>
-          <li class="page-item"><a class="page-link text-info" href="#">2</a></li>
-          <li class="page-item"><a class="page-link text-info" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only text-info">Next</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
 
 
 

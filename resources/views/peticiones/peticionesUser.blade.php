@@ -46,7 +46,7 @@
                     <span class="sr-only text-info">Previous</span>
                 </a>
             </li>
-            <li class="page-item"><a class="page-link text-info" href="#">1</a></li>
+            <li class="page-item"><a class="page-link text-info" href="#">  </a></li>
             <li class="page-item"><a class="page-link text-info" href="#">2</a></li>
             <li class="page-item"><a class="page-link text-info" href="#">3</a></li>
             <li class="page-item">

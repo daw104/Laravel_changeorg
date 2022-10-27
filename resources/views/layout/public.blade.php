@@ -41,7 +41,7 @@
             <a class="nav-link mayucula active" href="{{url('peticiones')}}">Más Peticiones</a>
           </li>
             <li class="nav-item">
-                <a class="nav-link mayucula active" href="{{ur}}">Peticiones Firmadas</a>
+                <a class="nav-link mayucula active" href="{{url('peticiones/firmadas')}}">Peticiones Firmadas</a>
             </li>
         </ul>
         <div class="d-flex">

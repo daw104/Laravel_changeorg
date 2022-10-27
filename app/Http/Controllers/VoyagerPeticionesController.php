@@ -23,7 +23,7 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
 
     // Ver todas las peticiones
     public function index(Request $request){
-        $peticiones = Peticione::all();
+        $peticiones = Peticione::paginate(3);
         return view('peticiones.index', compact('peticiones'));
     }
 
@@ -32,7 +32,6 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
         $user_id = 2;
         $userName = User::find($user_id)->name;
         $peticionesUser = Peticione::where('user_id',  $user_id)->get();
-
         return view('peticiones.peticionesUser', compact('peticionesUser','userName'));
     }
 

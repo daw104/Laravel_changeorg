@@ -24,7 +24,7 @@ Route::get('/socios', [App\Http\Controllers\PagesController::class, 'socios']);
 //Ruta para peticiones
 Route::get('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'index']);
 
-Route::get('/peticiones/',[\App\Http\Controllers\VoyagerUsersController::class, 'peticionesFirmadas']);
+Route::get('/peticiones/firmadas',[\App\Http\Controllers\VoyagerUsersController::class, 'peticionesFirmadas']);
 
 //Ruta para CREAR peticiones
 Route::get('/crear/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'create']);
