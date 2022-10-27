@@ -19,16 +19,15 @@
 
 
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" id="boton-cambiar-estado">
                             <h5 class="card-title">
                                 {{$peticion->titulo}}
                             </h5>
                             <p class="card-text">
                                 {{ Illuminate\Support\Str::of($peticion->descripcion)->words(40) }}
                             </p>
-
                             <a href="{{ url('peticiones/'.$peticion->id) }}" class="btn btn-info">Leer mas</a>
-
+                            <a id="cambiarEstado" href="{{ url('peticiones/cambiarestado/'.$peticion->id) }}" class="btn btn-success">Cambiar estado de petición</a>
                         </div>
                     </div>
                 </div>

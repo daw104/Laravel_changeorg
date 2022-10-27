@@ -9,6 +9,8 @@ $('#boton-firmar a').click(function(){
 //****Fin de Funcion
 
 //funcion para subir a git
-function prueba(){
+$('#boton-cambiar-estado #cambiarEstado').click(function(){
+    // selecciona el href despues de ese id.
+    return  confirm("¿Estas seguro de que quieres cambiar el estado de esta petición?");
 
-}
+});

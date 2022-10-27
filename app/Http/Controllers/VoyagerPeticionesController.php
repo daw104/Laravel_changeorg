@@ -39,7 +39,6 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
 
     //Ver datella de una peticion
     public function show(Request $request, $id){
-
         $peticion = Peticione::findOrFail($id);
         return view('peticiones.show', compact('peticion'));
     }
@@ -89,6 +88,16 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
         $peticion->save();
         return redirect('/peticiones');
     }
+
+
+    //Cambiar estado de peticion
+    public function cambiarEstado(Request $request, $id){
+        $peticion = Peticione::findOrFail($id);
+        $peticion->estado = 'aceptada';
+        $peticion->save();
+        return redirect('/peticiones');
+    }
+
 
 
 }

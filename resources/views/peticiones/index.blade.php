@@ -34,6 +34,8 @@
 
                     <a href="{{ url('peticiones/'.$peticion->id) }}" class="btn btn-info">Leer mas</a>
 
+                    <a href="" class="btn btn-success">Cambiar Estado de Petición</a>
+
                 </div>
             </div>
         </div>
