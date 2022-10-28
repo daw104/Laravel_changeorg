@@ -28,12 +28,12 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
     }
 
     //List Mine action
-    public function peticionesUser(Request $request){
+   /* public function peticionesUser(Request $request){
         $user_id = 2;
         $userName = User::find($user_id)->name;
         $peticionesUser = Peticione::where('user_id',  $user_id)->get();
         return view('peticiones.peticionesUser', compact('peticionesUser','userName'));
-    }
+    }*/
 
 
     //Ver datella de una peticion
