@@ -33,7 +33,7 @@ Route::get('/crear/',[\App\Http\Controllers\VoyagerPeticionesController::class, 
 Route::post('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'store']);
 
 //Ruta para peticiones por USARIO
-//Route::get('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'peticionesUser']);
+Route::get('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'peticionesUser']);
 
 //Ruta Detalle de Peticion
 Route::get('/peticiones/{peticion}',[\App\Http\Controllers\VoyagerPeticionesController::class, 'show']);

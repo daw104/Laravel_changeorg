@@ -28,12 +28,12 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
     }
 
     //List Mine action
-   /* public function peticionesUser(Request $request){
+    public function peticionesUser(Request $request){
         $user_id = 2;
         $userName = User::find($user_id)->name;
         $peticionesUser = Peticione::where('user_id',  $user_id)->get();
         return view('peticiones.peticionesUser', compact('peticionesUser','userName'));
-    }*/
+    }
 
 
     //Ver datella de una peticion
@@ -74,7 +74,7 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
         $input = $request->all();
         if ($file = $request->file('file')) {
             $name = $file->getClientOriginalName();
-            $file->move('images', $name);
+            $file->move('storage/peticiones/October2022', $name);
             $input['image'] = $name;
         }
         $category = Category::findOrFail($input['category']);
@@ -84,6 +84,7 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
         $peticion->category()->associate($category);
         $peticion->firmantes = 0;
         $peticion->estado = 'pendiente';
+        $peticion->image="peticiones/October2022".$input['image'];
         $peticion->save();
         return redirect('/peticiones');
     }
