@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 // Ruta para home
 Route::get('/', [App\Http\Controllers\PagesController::class, 'home']);
 //Ruta para socios
@@ -33,16 +29,18 @@ Route::get('/crear/',[\App\Http\Controllers\VoyagerPeticionesController::class, 
 Route::post('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'store']);
 
 //Ruta para peticiones por USARIO
-Route::get('/peticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'peticionesUser']);
+Route::get('/mispeticiones/',[\App\Http\Controllers\VoyagerPeticionesController::class, 'peticionesUser'])->middleware(['auth']);
 
 //Ruta Detalle de Peticion
 Route::get('/peticiones/{peticion}',[\App\Http\Controllers\VoyagerPeticionesController::class, 'show']);
 
 //Ruta para Firmar una Peticion
-Route::get('/peticiones/firmar/{peticion_id}',[\App\Http\Controllers\VoyagerPeticionesController::class, 'firmar']);
+Route::get('/peticiones/firmar/{peticion_id}',[\App\Http\Controllers\VoyagerPeticionesController::class, 'firmar'])->middleware(['auth']);
 
 //Cambiar estado
 Route::get('/peticiones/cambiarestado/{peticion_id}',[\App\Http\Controllers\VoyagerPeticionesController::class, 'cambiarEstado']);
+
+
 
 
 // Esto lo crea Voyager, sus Rutas
@@ -52,3 +50,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
+/*
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+*/
+
+require __DIR__.'/auth.php';

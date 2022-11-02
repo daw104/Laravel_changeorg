@@ -4,7 +4,7 @@
 }
 
 .color_navbar{
-    background-color: rgb(236, 44, 34) !important; 
+    background-color: rgb(236, 44, 34) !important;
 }
 
 img{
@@ -153,10 +153,10 @@ a{
 
 /* formulario de iniciario sesion */
 .gradient-custom-2 {
-    background-image: url(../imgs/img-car-2.jpg);
+    background-image: url("../imgs/img-car-2.jpg");
     background-repeat: round;
-    
+
     }
-     
+
 
     /****FIN formulario de iniciario sesion */

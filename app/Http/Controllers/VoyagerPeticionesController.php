@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 //tenemos que importarlo
 use App\Models\Peticione;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 // class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController;
@@ -29,8 +30,14 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
 
     //List Mine action
     public function peticionesUser(Request $request){
-        $user_id = 2;
-        $userName = User::find($user_id)->name;
+        $user=Auth::user();//
+        $user_id = User::find($user)->id;
+        $userName = User::find($user)->name;
+        echo "<pre>";
+        print_r($user_id);
+        print_r($userName);
+        echo "<pre>";
+        exit();
         $peticionesUser = Peticione::where('user_id',  $user_id)->get();
         return view('peticiones.peticionesUser', compact('peticionesUser','userName'));
     }
@@ -44,9 +51,9 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
 
     public function firmar(Request $request, $id){
         $peticion = Peticione::findOrFail($id);
-        //$user = Auth::user();
-        $user = 2;
-        $user_id = [$user];
+        $user = Auth::user();
+        //$user = 2;
+        $user_id = [$user->id];
         //$user_id = [$user->id];
         $peticion->firmas()->attach($user_id);
         return redirect('/peticiones');
