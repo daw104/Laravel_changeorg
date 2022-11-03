@@ -52,10 +52,17 @@
         </ul>
         <div class="d-flex">
           <button type="button" class="btn btn-success">
-            <a class="text-decoration-none" href="{{url('login')}}">Iniciar Sesión</a>
+            <a class="text-decoration-none" href="{{url('login')}}">Login</a>
           </button>
       </div>
-
+          <div class="d-flex ml-2">
+              <button type="button" class="btn btn-info">
+                  <a class="text-decoration-none" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                  </form>
+              </button>
+          </div>
       </div>
     </div>
   </nav>

@@ -160,3 +160,10 @@ a{
 
 
     /****FIN formulario de iniciario sesion */
+
+/*REGISTER*/
+@media (min-width: 640px){
+        .sm\:max-w-md{
+            max-width: 78rem!important;
+        }
+    }

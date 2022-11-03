@@ -31,14 +31,9 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
     //List Mine action
     public function peticionesUser(Request $request){
         $user=Auth::user();//
-        $user_id = User::find($user)->id;
-        $userName = User::find($user)->name;
-        echo "<pre>";
-        print_r($user_id);
-        print_r($userName);
-        echo "<pre>";
-        exit();
-        $peticionesUser = Peticione::where('user_id',  $user_id)->get();
+        $user_id = $user->id;
+        $userName = $user->name;
+        $peticionesUser = Peticione::where('user_id', '=', $user_id)->get();
         return view('peticiones.peticionesUser', compact('peticionesUser','userName'));
     }
 

@@ -1,3 +1,6 @@
+@extends('layout.public')
+
+@section('content')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -22,12 +25,13 @@
                                 <div class="col-lg-6">
                                     <div class="card-body p-md-5 mx-md-4">
 
+                                        <!--
                                         <div class="text-center">
                                             <img src="../imgs/logo.png"
                                                  style="width: 185px;" alt="logo">
                                             <h4 class="mt-1 mb-5 pb-1">Somos ChangeOrg</h4>
                                         </div>
-
+                                        -->
                                         <form method="POST" action="{{ route('login') }}">
                                             @csrf
                                             <p>Iniciar Sesion</p>
@@ -77,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                                    <div class="text-black px-3 py-4 p-md-5 mx-md-4">
+                                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                                         <h4 class="mb-4">La plataforma mundial para el cambio</h4>
                                         <p class="small mb-0">
                                             495.261.374 personas que pasan a la acción</p>
@@ -92,3 +96,5 @@
 
     </x-auth-card>
 </x-guest-layout>
+
+@endsection

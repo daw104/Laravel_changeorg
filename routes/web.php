@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 // Ruta para home
 Route::get('/', [App\Http\Controllers\PagesController::class, 'home']);
 //Ruta para socios
@@ -57,3 +58,7 @@ Route::get('/dashboard', function () {
 */
 
 require __DIR__.'/auth.php';
+
+
+
+

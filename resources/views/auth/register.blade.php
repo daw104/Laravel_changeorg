@@ -1,3 +1,6 @@
+@extends('layout.public')
+
+@section('content')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -98,5 +101,6 @@
             </div>
         </section>
 
-    </x-auth-card>
-</x-guest-layout>
+        </x-auth-card>
+    </x-guest-layout>
+@endsection
