@@ -10,7 +10,7 @@
 
     <section class="text-center">
         <h4 class="mb-5 mt-4">
-          <strong>Nuestras Peticiones</strong>
+          <strong>Peticiones</strong>
         </h4>
 
         <div class="row">
@@ -29,7 +29,7 @@
                         {{$peticion->titulo}}
                     </h5>
                     <h5 class="card-title">
-                  <strong>  Esta petción esta: {{$peticion->estado}} </strong>
+                 <strong>  Esta petción esta: {{$peticion->estado}}   </strong>
                     </h5>
 
                     <p class="card-text">
@@ -47,9 +47,9 @@
     </div>
       </section>
 
-
-
-
+    <div class="paginacion">
+        {!! $peticiones->links() !!}
+    </div>
 
 
 

@@ -4,8 +4,10 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
+            <a href="/">
             <img src="../imgs/logo.png"
                  style="width: 185px;" alt="logo">
+            </a>
             <h4 class="mt-1 mb-5 pb-1">Somos ChangeOrg</h4>
         </x-slot>
 
@@ -25,13 +27,7 @@
                                 <div class="col-lg-6">
                                     <div class="card-body p-md-5 mx-md-4">
 
-                                        <!--
-                                        <div class="text-center">
-                                            <img src="../imgs/logo.png"
-                                                 style="width: 185px;" alt="logo">
-                                            <h4 class="mt-1 mb-5 pb-1">Somos ChangeOrg</h4>
-                                        </div>
-                                        -->
+
                                         <form method="POST" action="{{ route('login') }}">
                                             @csrf
                                             <p>Iniciar Sesion</p>
@@ -39,21 +35,22 @@
                                                 <a class="text-muted" href="{{url('register')}}">Registrate</a>
                                             </p>
 
-                                            <div class="form-outline mb-4">
-                                                <x-input-label for="email" :value="__('Email')" />
+                                            <div class="form-outline mb-4 pt-2">
+                                                <x-input-label for="email" :value="__('')" />
 
-                                                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                                                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" placeholder="*Email" required autofocus />
 
                                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
                                             </div>
 
                                             <div class="form-outline mb-4">
-                                                <x-input-label for="password" :value="__('Password')" />
+                                                <x-input-label for="password" :value="__('')" />
 
                                                 <x-text-input id="password" class="block mt-1 w-full"
                                                               type="password"
                                                               name="password"
+                                                              placeholder="*Contraseña"
                                                               required autocomplete="current-password" />
 
                                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />

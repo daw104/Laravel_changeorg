@@ -5,8 +5,11 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <x-application-logo class="w-20 h-20 fill-current text-gray-500 ocultar-logo" />
+                <img src="../imgs/logo.png"
+                     style="width: 185px;" alt="logo">
             </a>
+            <h4 class="mt-1 mb-5 pb-1">Somos ChangeOrg</h4>
         </x-slot>
 
 
@@ -21,44 +24,41 @@
                                 <div class="col-lg-6">
                                     <div class="card-body p-md-5 mx-md-4">
 
-                                        <div class="text-center">
-                                            <img src="../imgs/logo.png"
-                                                 style="width: 185px;" alt="logo">
-                                            <h4 class="mt-1 mb-5 pb-1">Somos ChangeOrg</h4>
-                                        </div>
+
 
                                         <form method="POST" action="{{ route('register') }}">
                                             @csrf
-                                            <p>Registrate</p>
+                                            <p class="text-center">Registrate</p>
                                             <p>¿Ya tienes cuenta?
                                                 <a class="text-muted" href="{{url('login')}}">Iniciar Sesión</a>
                                             </p>
 
                                             <!--Name-->
-                                            <div class="form-outline mb-4">
-                                                <x-input-label for="name" :value="__('Name')" />
+                                            <div class="form-outline mb-4 pt-2">
+                                                <x-input-label for="name" :value="__('')" />
 
-                                                <x-text-input id="name"  type="text" name="name" :value="old('name')" required autofocus />
+                                                <x-text-input id="name"  type="text" name="name" :value="old('name')" placeholder="*Nombre" required autofocus />
 
                                                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                             </div>
 
                                             <!--Email-->
                                             <div class="form-outline mb-4">
-                                                <x-input-label for="email" :value="__('Email')" />
+                                                <x-input-label for="email" :value="__('')" />
 
-                                                <x-text-input id="email"  type="email" name="email" :value="old('email')" required />
+                                                <x-text-input id="email"  type="email" name="email" :value="old('email')" placeholder="*Email" required />
 
                                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                             </div>
 
                                             <!--Password-->
                                             <div class="form-outline mb-4">
-                                                <x-input-label for="password" :value="__('Password')" />
+                                                <x-input-label for="password" :value="__('')" />
 
                                                 <x-text-input id="password"
                                                               type="password"
                                                               name="password"
+                                                              placeholder="*Contraseña"
                                                               required autocomplete="new-password" />
 
                                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
@@ -66,11 +66,13 @@
 
                                             <!--Confirm Password-->
                                             <div class="form-outline mb-4">
-                                                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                                                <x-input-label for="password_confirmation" :value="__('')" />
 
                                                 <x-text-input id="password_confirmation"
                                                               type="password"
-                                                              name="password_confirmation" required />
+                                                              name="password_confirmation"
+                                                              placeholder="*Repetir Contraseña"
+                                                              required />
 
                                                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                                             </div>

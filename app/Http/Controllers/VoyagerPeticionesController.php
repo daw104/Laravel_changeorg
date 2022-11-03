@@ -47,9 +47,7 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
     public function firmar(Request $request, $id){
         $peticion = Peticione::findOrFail($id);
         $user = Auth::user();
-        //$user = 2;
         $user_id = [$user->id];
-        //$user_id = [$user->id];
         $peticion->firmas()->attach($user_id);
         return redirect('/peticiones');
     }
@@ -76,17 +74,20 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
         $input = $request->all();
         if ($file = $request->file('file')) {
             $name = $file->getClientOriginalName();
-            $file->move('storage/peticiones/October2022', $name);
+            $file->move('storage\peticiones\October2022', $name);
             $input['image'] = $name;
         }
         $category = Category::findOrFail($input['category']);
-        $user = 2; //asociarlo al usuario authenticado
+        $user = Auth::user(); //asociarlo al usuario authenticado
+       // $user = 2; //asociarlo al usuario authenticado
         $peticion = new Peticione($input);
         $peticion->user()->associate($user);
+
+
         $peticion->category()->associate($category);
         $peticion->firmantes = 0;
         $peticion->estado = 'pendiente';
-        $peticion->image="peticiones/October2022".$input['image'];
+        $peticion->image="peticiones\October2022".$input['image'];
         $peticion->save();
         return redirect('/peticiones');
     }
@@ -95,6 +96,9 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
     //Cambiar estado de peticion
     public function cambiarEstado(Request $request, $id){
         $peticion = Peticione::findOrFail($id);
+        if ($request->user()->cannot('cambiarEstado', $peticion)) {
+            abort(403);
+        }
         $peticion->estado = 'aceptada';
         $peticion->save();
         return redirect('/peticiones');
