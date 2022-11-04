@@ -87,7 +87,7 @@ class VoyagerPeticionesController extends \TCG\Voyager\Http\Controllers\VoyagerB
         $peticion->category()->associate($category);
         $peticion->firmantes = 0;
         $peticion->estado = 'pendiente';
-        $peticion->image="peticiones\October2022".$input['image'];
+        $peticion->image="\peticiones\October2022".$input['image'];
         $peticion->save();
         return redirect('/peticiones');
     }
